@@ -1,0 +1,139 @@
+<div class="modal-backdrop" *ngIf="show" (click)="onBackdropClick($event)">
+    <div class="modal-content">
+        <span class="close" (click)="triggerCloseAnimation()">&times;</span>
+        <div class="categories-area">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+
+
+
+            <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+                <div class="row">
+
+                    <div style=" border-radius: 8px 8px 0px 0px;
+                        ;
+                        border: 1px solid #797b7d; margin-left: 19px;  width: 209.5px; height: 209.5px;">
+                        <img style="width: 100%; height: 100%;border-radius: 8px 8px 0px 0px"
+                            src="assets/images/rabia/profil.png" alt="">
+                    </div>
+
+
+
+
+
+                    <div
+                        style="margin-top: 1%;  margin-left: 2%; flex-direction: column;display: flex; align-items: left;width:72%">
+
+
+                        <h5
+                            style="     text-align: left;font-weight: 600;font-size: 1.5rem; line-height: 1.5rem; color: rgb(163, 163, 163);">
+                            Team
+                        </h5>
+                        <h5 style="  text-align: left;font-weight: 700;font-size: 4.6rem; line-height: 1rem;">
+                            {{resume.comments}}
+                        </h5>
+                        <div style="height: 27px;"></div>
+
+                        <h5
+                            style=" text-align: left;font-weight: 600;font-size: 2rem; line-height: 0rem; color: rgb(163, 163, 163);">
+                            {{resume.game}} | {{resume.platform}} | {{resume.region}}
+                        </h5>
+                        <div *ngIf="!status" style="   font-size: 100%;
+    font-weight: bold;text-align: right;width:100%;  color: #bcbbc1;"><img
+                                style="margin-right: 1%; height: 23px; width: 23px;"
+                                src="assets/images/rabia/horloge-murale (3).png" alt="Diamond"><i> WAITING LIST</i>
+                        </div>
+                        <div *ngIf="status" style="   font-size: 100%;
+    font-weight: bold;text-align: right;width:100%;  color: #bcbbc1;"><img
+                                style="margin-right: 1%; height: 33px; width: 33px;"
+                                src="assets/images/rabia/grouper.png" alt="Diamond"><i> MEMBER</i>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div style="  display: flex;justify-content: center;">
+                    <div style=" width:210px;" class="profile-container">
+                        <div class="profile-block" style="display: flex; justify-content: center;align-items: center;">
+                            <img style="height: 27px; width: 27px;" src="assets/images/rabia/qualite.png" alt="Diamond">
+                            <div style="width:10px"></div>
+                            <p class="not-premium">NOT PREMIUM</p>
+                        </div>
+                        <div class="profile-block views">
+                            <p style="text-align: center;"><strong>0</strong><br> views</p>
+                        </div>
+                        <div class="profile-block contacts">
+                            <p style="text-align: center;"><strong style="text-align: center;">0</strong><br> contact
+                                from teams </p>
+                        </div>
+
+                        <div class="level-container">
+                            <h3 style="color: 
+#bcbbc1;">LEVEL</h3>
+                            <div class="progress">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+                        <br>
+
+                    </div>
+                    <div style="width:700px ;display: flex; flex-direction: column; align-items: flex-start; margin-left: 0%"
+                        class="profile-info-container">
+                        <div class="profile-section flex">
+                            <h3>AMBITION</h3>
+                            <p style="width: 620px;">
+                                {{ resume.ambitions || 'No ambition yet' }}
+                            </p>
+                        </div>
+                        <div class="profile-section profile-row">
+                            <div class="profile-column flex">
+                                <h3 style="width: 300px;" class="flex">ONLINE EXPERIENCE</h3>
+                                <p style="width: 300px;" *ngFor="let item of items1">{{ item }}</p>
+                                <p style="width: 300px;" *ngIf="items1.length === 0">No experiences yet</p>
+                            </div>
+                            <div style="width: 300px;" class="profile-column flex">
+                                <h3 style="width: 300px;">OFFLINE EXPERIENCE</h3>
+                                <p style="width: 300px;" *ngFor="let item of items2">{{ item }}</p>
+                                <p style="width: 300px;" *ngIf="items2.length === 0">No experiences yet</p>
+                            </div>
+                        </div>
+                        <div class="profile-section flex">
+                            <h3>DESCRIPTION</h3>
+                            <p style="width: 620px;">{{ resume.description || 'No description yet' }}</p>
+                        </div>
+                        <div class="profile-section profile-row">
+                            <div class="profile-column flex">
+                                <h3 style="width: 300px;">REQUIREMENTS</h3>
+                                <p style="width: 300px;" *ngFor="let item of items5">{{ item }}</p>
+                                <p style="width: 300px;" *ngIf="items5.length === 0">No experiences yet</p>
+                            </div>
+                            <div class="profile-column flex">
+                                <h3>
+                                    Sponsors</h3>
+                                <p style="width: 300px;" *ngFor="let item of items4">{{ item }}</p>
+                                <p style="width: 300px;" *ngIf="items4.length === 0">No experiences yet</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-section flex">
+                            <h3 style="width: 600px;">LINKS</h3>
+                            <p *ngFor="let item of items3">{{ item }}</p>
+                            <p *ngIf="items3.length === 0">No links yet</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

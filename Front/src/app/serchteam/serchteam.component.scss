@@ -1,0 +1,317 @@
+/* Styles CSS pour personnaliser les étoiles et les sélections */
+
+/* Styliser les icônes d'étoile en blanc */
+.star-icon {
+    color: white;
+}
+
+/* Styliser les options sélectionnées en gris */
+.p-multiselect .p-multiselect-token {
+    background-color: gray;
+    color: white;
+}
+
+.p-multiselect .p-multiselect-label {
+    color: gray;
+}
+
+.p-multiselect .p-multiselect-panel {
+    background-color: white;
+}
+
+.p-multiselect .p-multiselect-item {
+    color: gray;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    /* Ajuste la hauteur pour remplir l'écran */
+    width: 100%;
+}
+
+
+
+
+
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    outline: inherit;
+}
+
+
+.card-header {
+    position: relative;
+}
+
+.profile-block p {
+    margin: 5px 0;
+    color: #6c757d;
+}
+
+.not-premium {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.overlay {
+
+
+
+    position: absolute;
+    left: 100px;
+    top: 13px;
+    height: 15%;
+    background-color: #7b1680;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.platform-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.game-name {
+    color: white;
+    margin-right: 5px;
+}
+
+.country-flag {
+    width: 20px;
+    height: 20px;
+}
+
+
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    flex: 1;
+    /* Rend les boutons flexibles */
+    min-width: 40px;
+    /* Taille minimale pour s'assurer que le contenu est visible */
+    max-width: 60px;
+    /* Taille maximale pour éviter de trop rétrécir */
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    border-radius: 25px;
+    background-color: transparent;
+    color: rgba(204, 204, 204, 0.5);
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-right: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.pagination button.active {
+    background-color:
+        #7b1680;
+    color: white;
+    border-color:
+        #7b1680
+}
+
+.pagination button:hover:not(.active) {
+    background-color:
+        #7b1680
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+
+
+
+
+    /* Assure que les éléments commencent à gauche */
+}
+
+.card {
+    width: 200px;
+    /* Pour s'assurer que 5 cartes remplissent une ligne complète */
+    background-color: rgb(14 11 32);
+
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+
+}
+
+
+label {
+    font-weight: 800;
+    --tw-text-opacity: .7;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+div {
+    font-weight: 1050;
+    --tw-text-opacity: .7;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+
+
+}
+
+
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-header img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #00bcd4;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    border-radius: 25px;
+    background-color: transparent;
+    color: rgba(204, 204, 204, 0.5);
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+button:disabled {
+    border: 1px solid rgba(204, 204, 204, 0.5);
+
+    color: rgba(204, 204, 204, 0.5);
+    ;
+
+}
+
+.reset-button:hover:not(:disabled) {
+    background-color:
+        #7b1680;
+    color: rgba(204, 204, 204, 0.5);
+}
+
+.fixed-width .p-multiselect {
+    width: 400px !important;
+}
+
+.fixed-width .p-multiselect-label {
+    width: 100%;
+}
+
+.fixed-width .p-dropdown {
+    width: 400px !important;
+}
+
+.vertical-separator {
+
+    width: 1px;
+    background-color: rgba(204, 204, 204, 0.5);
+    ;
+    margin: 50px 20px;
+
+}
+
+.g {
+
+    border: 1px solid rgba(204, 204, 204, 0.5);
+
+}
+
+.card.g {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.g:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 4px;
+    background-color: transparent;
+    /* Couleur de fond personnalisée */
+    color: rgba(204, 204, 204, 0.5);
+    /* Couleur du texte */
+    box-sizing: border-box;
+}
+
+
+input:focus {
+    border-color: #007BFF;
+    /* Couleur de la bordure en focus */
+    outline: none;
+}

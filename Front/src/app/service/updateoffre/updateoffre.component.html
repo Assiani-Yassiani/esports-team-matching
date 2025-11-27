@@ -1,0 +1,77 @@
+<section style="height: 400px;" class="job-searching af">
+    <div class="container" style="height: 400px;">
+      <div class="row" style="height: 400px;">
+        <div class="col-md-12 col-sm-12" style="height: 400px;">
+          <div class="search-con" style="height: 400px;">
+            <div class="row">
+              <div class="col-md-12 col-sm-12" style="margin-top: 60px;">
+                <div class="heading_con">
+                  <h2 style="font-size: 50px;">UPDATE YOUR RESUME</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br><br><br>
+  
+  <section>
+    <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+      <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+        <h3>BASIC INFORMATION</h3>
+        <br><br>
+        <div class="row flex-container" style="display: flex; justify-content: space-between;">
+          <div class="form-group" style="display: flex;width: 100%;">
+            <label for="comments">Number Needed</label>
+            <input type="number" id="comments" style="margin-left: 10%; width: 100px; height: 45px;" formControlName="comments" />
+          </div>
+        </div>
+        <br>
+        <div class="row flex-container" style="display: flex; justify-content: space-between;">
+          <div class="form-group" style="display: flex; width: 100%;">
+            <label for="comments2">Minimum Age</label>
+            <input type="number" id="comments2" style="margin-left: 14%; width: 100px; height: 45px;" formControlName="comments2" />
+          </div>
+        </div>
+        <br><br>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="participation" name="participation" formControlName="participation">
+            <label for="participation">Participation financière du joueur ?</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="remunere" name="remunere" formControlName="remunere">
+            <label for="remunere">Rémunéré</label>
+          </div>
+        </div>
+        <br><br>
+        <h3>TEAM TYPE</h3>
+        <div class="form-group">
+          <div class="columns">
+            <div class="column" *ngFor="let type of teamTypes; let i = index">
+              <input type="radio" [value]="type.value" formControlName="teamType" /> {{ type.label }}
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="description-container">
+          <h2 class="title">DESCRIPTION</h2>
+          <h3 class="subtitle">A LONG AND NICE DESCRIPTION WILL INCREASE YOUR CHANCES TO GET RECRUITED (OR TO RECRUIT).</h3>
+          <p class="note">Don't put any direct contact information (emails, discord usernames, or others...).</p>
+          <p class="description">Players or teams can contact you through Seek Team for free and in an unlimited way as long as your resume or offers are active. The recommended way is to handle your entire recruitment workflow on the website.</p>
+        </div>
+        <div class="textarea-container">
+          <textarea style="height: 250px;" formControlName="description" placeholder="Description..."></textarea>
+        </div>
+        <br>
+      </div>
+      <br><br>
+      <div class="text-center">
+        <button type="submit" class="btn btn-submit">UPDATE</button>
+      </div>
+    </form>
+  </section>
+  <br><br><br><br><br><br>
+  

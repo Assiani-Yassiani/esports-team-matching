@@ -1,0 +1,12 @@
+<div class="modal-backdrop" *ngIf="show" (click)="onBackdropClick($event)">
+    <div class="modal-content">
+        <span class="close" (click)="triggerCloseAnimation()">&times;</span>
+        <h2>Join Your Team !</h2>
+        <h4>IN DISCORD</h4>
+        <p>Click here to join your team and communicate with the team members</p>
+
+
+        <button (click)="goToLink()" class="btn-create-cv">Click</button>
+
+    </div>
+</div>

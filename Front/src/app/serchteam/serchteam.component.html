@@ -1,0 +1,207 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px; display: flex; justify-content: center;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div style="display: flex; justify-content: center;" class="row">
+                        <div style="margin-top: 20px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">SEARCH, CONTACT & BE RECRUITED Team</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+
+<div style="margin-left: 0;" class="row">
+
+    <form style="width:100" [formGroup]="myform" (ngSubmit)="onSubmit()">
+        <div style="width:100%;margin-right:10px ;padding-left: 5px; padding-right: 5px; padding-top: 17px;"
+            class="card s">
+            <button type="button" (click)="resetSearch()" [disabled]="isFormEmpty()" class="reset-button">
+                Reset search
+            </button>
+            <br>
+            <br>
+
+
+            <div style="height: 30px;"></div>
+
+            <div class="filter-group">
+                <label for="countriesSelect">Select Countries</label><br>
+                <p-multiSelect id="countriesSelect" [options]="countries" formControlName="selectedCountries"
+                    placeholder=" * * *  * * * * * * *  Select  * * * * * *  * * * *  " optionLabel="name"
+                    display="chip" [showClear]="true">
+                </p-multiSelect>
+            </div>
+            <br>
+
+            <div class="filter-group">
+                <label for="gamesSelect">Select Games</label><br>
+                <p-multiSelect id="gamesSelect" [options]="games" formControlName="selectedGames"
+                    placeholder=" * * *  * * * * * * *  Select  * * * * * *  * * * *  " optionLabel="name"
+                    display="chip" [showClear]="true">
+                </p-multiSelect>
+            </div>
+            <br>
+
+            <div class="filter-group">
+                <label for="platformsSelect">Select Platforms</label><br>
+                <p-multiSelect id="platformsSelect" [options]="platforms" formControlName="selectedPlatforms"
+                    placeholder=" * * *  * * * * * * *  Select  * * * * * *  * * * *  " optionLabel="name"
+                    display="chip" [showClear]="true">
+                </p-multiSelect>
+            </div>
+            <br>
+            <div class="filter-group">
+                <label for="teamNameInput">Team name</label><br>
+                <input id="teamNameInput" formControlName="teamName" placeholder="Team name" type="text" />
+            </div>
+            <br>
+
+            <div class="filter-group" formGroupName="selectedLevels">
+                <label>Level</label>
+                <div>
+                    <p-checkbox formControlName="High-" binary="true"
+                        label="High- ({{ levelsCount['High-'] }})"></p-checkbox>
+                </div>
+                <div>
+                    <p-checkbox formControlName="Middle+" binary="true"
+                        label="Middle+ ({{ levelsCount['Middle+'] }})"></p-checkbox>
+                </div>
+                <div>
+                    <p-checkbox formControlName="Middle-" binary="true"
+                        label="Middle- ({{ levelsCount['Middle-'] }})"></p-checkbox>
+                </div>
+                <div>
+                    <p-checkbox formControlName="Low-" binary="true"
+                        label="Low- ({{ levelsCount['Low-'] }})"></p-checkbox>
+                </div>
+                <div>
+                    <p-checkbox formControlName="Low+" binary="true"
+                        label="Low+ ({{ levelsCount['Low+'] }})"></p-checkbox>
+                </div>
+                <div>
+                    <p-checkbox formControlName="High+" binary="true"
+                        label="High+ ({{ levelsCount['High+'] }})"></p-checkbox>
+                </div>
+                <div>
+                    <p-checkbox formControlName="Pro" binary="true" label="Pro ({{ levelsCount['Pro'] }})"></p-checkbox>
+                </div>
+            </div>
+
+            <!-- Affichez la priorité calculée -->
+
+
+            <br>
+
+            <div class="filter-group">
+                <label for="profilesSelect">Select Profiles</label><br>
+                <p-multiSelect id="profilesSelect" [options]="profiles" formControlName="selectedProfiles"
+                    placeholder=" * * *  * * * * * * *  Select  * * * * * *  * * * *  " optionLabel="name"
+                    display="chip" [showClear]="true"></p-multiSelect>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <!-- Ajouter un bouton de soumission -->
+
+        </div>
+    </form>
+
+    <div style="color:aliceblue" class="vertical-separator"></div>
+
+    <div class="content">
+        <div style="padding-right: 20px;" class="pagination">
+            <button (click)="goToFirstPage()">&laquo;&laquo;</button>
+            <button (click)="goToPreviousPage()">&laquo;</button>
+            <button *ngFor="let page of pages" [class.active]="currentPage === page" (click)="goToPage(page)">
+                {{ page }}
+            </button>
+            <button (click)="goToNextPage()">&raquo;</button>
+            <button (click)="goToLastPage()">&raquo;&raquo;</button>
+        </div>
+
+        <div class="cards">
+            <div *ngFor="let player of currentPlayers let i = index" class="card ">
+                <div (click)="profil(player.id)"
+                    style="height: 240px; --tw-bg-opacity: 1; color: rgba(204, 204, 204, 0.5); background-color: rgb(18 14 40 / var(--tw-bg-opacity)); border-radius: 6px; border: 1px solid rgba(204, 204, 204, 0.5);"
+                    class="card-header">
+                    <img style="border-radius: 6px; position: relative;" src="assets/images/rabia/profil.png"
+                        alt="Player Image">
+                    <div class="overlay">
+                        <img style="width: 17px; height: 17px;" src="assets/images/rabia/{{player.platform}}.png"
+                            alt="{{player.platform}}" class="platform-icon">
+                        <span class="game-name">{{ player.game }}</span>
+                        <img style="width: 20px; height: 20px;" src="assets/images/rabia/{{player.region}}.png"
+                            alt="{{player.region}}" class="country-flag">
+                    </div>
+                    <div class="profile-block"
+                        style="padding-top: 5%; display: flex; justify-content: center; align-items: center;">
+                        <h2 style="width:100%">{{player.comments}}</h2>
+                    </div>
+                </div>
+                <div
+                    style="border: 1px solid rgba(204, 204, 204, 0.5); border-radius: 8px; height: 55px; display: flex; justify-content: center; align-items: center;">
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/star.png" alt="Diamond">
+                    </div>
+                    <div style="height: 100%; width: 1%; background-color: #6c757d;"></div>
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                        {{player.priority}}
+                    </div>
+                </div>
+                <div style="background-color: #f5f5f5;
+                border-bottom:1px solid rgba(204, 204, 204, 0.5);background-color:transparent; display: flex;    
+                flex-direction: column;">
+                    <div style="padding-top: 5%; display: flex; justify-content: flex-start; height: 50px">
+
+                        <img style="margin-left: 2%; height: 27px; width: 27px;" src="assets/images/rabia/TUN.png"
+                            alt="Check">
+                        <p style="margin-left: 5%; font-size:100%;">
+                            {{player.offres.length}} recruitment offers
+                        </p>
+                        <button style=" margin-bottom: 7%; width: 0 ;" (click)="toggleDropdown(player)"
+                            class="dropdown-btn">
+                            <span class="arrow" [class.rotated]="player.showDropdown">▼</span>
+                        </button>
+                    </div>
+
+
+                    <div class="d"
+                        [ngStyle]="{'max-height': player.showDropdown ? '400px' : '0', 'overflow': 'hidden', 'transition': 'max-height 0.5s ease-in'}">
+                        <div style="margin-bottom: 6%;" *ngFor="let offer of player.offres">
+                            <!-- Utilisez player.offers ici -->
+                            <img style="margin-left: 2%; height: 27px; width: 27px;"
+                                src="assets/images/rabia/{{offer.teamType}}.png" alt="Check"> {{offer.teamType}}
+                            ({{offer.comments}})
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>

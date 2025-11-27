@@ -1,0 +1,17 @@
+<div class="modal-backdrop" *ngIf="show" (click)="onBackdropClick($event)">
+    <div class="modal-content">
+        <span  class="close" (click)="triggerCloseAnimation()">&times;</span>
+        <h2>APPLY IN THIS TEAM ?</h2>
+        <h3>REQUIREMENTS</h3>
+        <p>You must have a gaming resume that is matching the team's game</p>
+        <div style="display: flex;justify-content: center;align-items: center;">
+            <div class="alert">
+                <img style="width:50px;height: 50px;" src="assets/images/rabia/panneau-davertissement.png"
+                    alt="Alert Icon">
+                <!-- Replace with your alert icon -->
+                <span>You have no resume on the same team's game</span>
+            </div>
+            <button class="btn-create-cv" (click)="createCv()">CREATE A CV</button>
+        </div>
+    </div>
+</div>

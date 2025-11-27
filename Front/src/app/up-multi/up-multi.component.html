@@ -1,0 +1,183 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 60px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">UPDATE YOUR RESUME</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+<section>
+    <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+        <h3>EXPERIENCES</h3>
+
+        <div style="padding-left: 17px;" class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="input-container">
+                    <form [formGroup]="resumeForm" (ngSubmit)="addItem1()">
+                        <input formControlName="newItem1" placeholder="Enter new item" />
+                        <button type="submit" class="add-button">+</button>
+                    </form>
+                </div>
+                <ul>
+                    <li *ngFor="let item of items1; let i = index">
+                        <div class="item-container">
+                            <span>{{ item }}</span>
+                            <button (click)="removeItem1(i)">x</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="input-container">
+                    <form [formGroup]="resumeForm" (ngSubmit)="addItem2()">
+                        <input formControlName="newItem2" placeholder="Enter new item" />
+                        <button type="submit" class="add-button">+</button>
+                    </form>
+                </div>
+                <ul>
+                    <li *ngFor="let item of items2; let i = index">
+                        <div class="item-container">
+                            <span>{{ item }}</span>
+                            <button (click)="removeItem2(i)">x</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <h3>SOCIAL</h3>
+
+        <div style="padding-left: 17px;" class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="input-container">
+                    <form [formGroup]="resumeForm" (ngSubmit)="addItem3()">
+                        <input formControlName="newItem3" placeholder="Enter new item" />
+                        <button type="submit" class="add-button">+</button>
+                    </form>
+                </div>
+                <ul>
+                    <li *ngFor="let item of items3; let i = index">
+                        <div class="item-container">
+                            <span>{{ item }}</span>
+                            <button (click)="removeItem3(i)">x</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="input-container">
+                    <form [formGroup]="resumeForm" (ngSubmit)="addItem4()">
+                        <input formControlName="newItem4" placeholder="Enter new item" />
+                        <button type="submit" class="add-button">+</button>
+                    </form>
+                </div>
+                <ul>
+                    <li *ngFor="let item of items4; let i = index">
+                        <div class="item-container">
+                            <span>{{ item }}</span>
+                            <button (click)="removeItem4(i)">x</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+        <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+            <h3>BASIC INFORMATIONS</h3>
+            <br><br>
+            <div style="padding-left: 17px;" class="row flex-container">
+                <div class="form-group">
+                    <p-dropdown [options]="platformOptions" formControlName="platform"
+                        placeholder="Select a platform"></p-dropdown>
+                </div>
+
+
+
+                <div class="form-group">
+                    <input style="width: 380px; height: 45px;" formControlName="comments" placeholder="In-game name" />
+                </div>
+            </div>
+
+            <div style="padding-left: 17px;" class="row flex-container">
+
+                <div class="form-group">
+                    <p-dropdown [options]="regionOptions" formControlName="region"
+                        placeholder="Select a priority"></p-dropdown>
+                </div>
+
+                <div class="form-group">
+                    <input style="width: 380px; height: 45px;" formControlName="comments2" placeholder="In-game name" />
+                </div>
+            </div>
+
+
+
+
+
+            <br>
+
+            <div class="description-container">
+                <h2 class="title">DESCRIPTION</h2>
+                <h3 class="subtitle">A LONG AND NICE DESCRIPTION WILL INCREASE YOUR CHANCES TO GET RECRUITED (OR TO
+                    RECRUIT).</h3>
+                <p class="note">Don't put any direct contact informations (emails, discord usernames or others...).</p>
+                <p class="description">Players or teams can contact you through Seek Team for free and in an unlimited
+                    way as long as your resume or offers are active. The recommended way is to deal your whole
+                    recruitment workflow on the website.</p>
+            </div>
+
+            <div class="textarea-container">
+                <textarea style="height: 250px;" formControlName="description" placeholder="Description..."></textarea>
+            </div>
+            <br>
+
+            <div class="textarea-container2">
+                <textarea style="height: 150px;" formControlName="ambitions" placeholder="Ambitions..."></textarea>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group">
+                    <input style="width: 380px; height: 45px;" formControlName="password"
+                        placeholder="Password to manually join the team" />
+                </div>
+                <div style="width: 65px;"></div>
+                <div class="form-group">
+                    <input style="width: 560px; height: 45px;" formControlName="password2"
+                        placeholder="Password to give to a team in order to join your multigaming" />
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-submit">UPDATE</button>
+        </div>
+    </form>
+
+
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

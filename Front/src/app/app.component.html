@@ -1,0 +1,415 @@
+<div ng id="preloader">
+  <div id="status" class="spinner">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+  </div>
+</div>
+<!--Preloader area End-->
+
+<!--Header area start here-->
+<header id="sticky">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-4">
+        <div class="logo-area">
+          <a class="nor" href="/">
+            <img src="/assets/images/rabia/logo3.png" alt="Logo" class="responsive-logo" />
+          </a>
+
+          <a class="stic" href="/"><img src="/assets/images/rabia/logo3.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-9 col-8">
+        <div class="main-menu">
+          <nav>
+            <ul>
+
+              <li>
+                <a href="javascript:void(0)">Players</a>
+
+              </li>
+              <li>
+                <a href="javascript:void(0)">Teams</a>
+
+              </li>
+              <li>
+                <a href="javascript:void(0)">Multigaming</a>
+
+              </li>
+
+              <li><a href="/admin">Admin</a></li>
+              <li *ngIf="!conct" class="users"><button type="button" class="sign_up" data-toggle="modal"
+                  data-target="#exampleModalCenter"><i class="flaticon-add-user"></i>Sign
+                  Up</button></li>
+              <li *ngIf="!conct" class="users"><button type="button" (click)="loginclen()" class="log_in"
+                  data-toggle="modal" data-target="#exampleModalCenter"><i class="flaticon-login"></i>Login</button>
+              </li>
+              <li *ngIf="conct" class="users"> <img
+                  style="border-radius: 50%; overflow: hidden; width:45px;height: 45px;"
+                  src="assets/images/rabia/profil.png" alt="">
+              </li>
+              <li *ngIf="conct" (click)="logout()" class="users"><button type="button" class="log_in"><i
+                    class="flaticon-login"></i></button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="" alt="">
+
+  <!--Responsive Menu area-->
+  <div class="mobilemenu">
+    <div class="mobile-menu  hidden-md-up">
+      <nav>
+        <ul>
+          <li><a href="index-2.html">Home</a></li>
+          <li>
+            <a href="javascript:void(0)">Jobs</a>
+            <ul>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li><a href="jobs-details.html">Jobs Details</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Recruiters</a>
+            <ul>
+              <li><a href="recruiters.html">Recruiters</a></li>
+              <li><a href="recruiters-details.html">Recruiters Details</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Candidates</a>
+            <ul>
+              <li><a href="candidates.html">Candidates</a></li>
+              <li><a href="candidates-details.html">Candidates Details</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Blog</a>
+            <ul>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="blog-details.html">Blog Details</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--Responsive Menu area End-->
+</header>
+<!--Header area end here-->
+<!-- Modal -->
+<div *ngIf="close" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm pd-0">
+              <ul class="navtab">
+                <li>
+                  <a (click)="login2()" class="prev-step active" href="javascript:void(0)">LOGIN</a>
+                </li>
+
+                <li>
+                  <a class="next-step" href="javascript:void(0)">Register</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div id="login">
+                  <div class="logins">
+                    <div *ngIf="login">
+                      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                        <fieldset>
+                          <label>Username or Email Address</label>
+                          <input type="text" formControlName="email" placeholder="Enter Username or Email Address">
+
+                          <span><i class="fa fa-user"></i></span>
+                        </fieldset>
+                        <fieldset>
+                          <label>Password</label>
+                          <input type="password" formControlName="password" placeholder="Enter Password">
+                          <span><i class="flaticon-lock"></i></span>
+                        </fieldset>
+                        <button type="submit" class="btn1">LOGIN</button>
+                        <div class="agree"><input type="checkbox" class="checkbox-custom">
+                          <p>Remember Password</p> <a (click)="forget()">Forgot Password?</a>
+                        </div>
+
+
+                      </form>
+                      <div *ngIf="loginError" class="error-message">Incorrect email or password</div>
+
+
+                      <div class="login_ac">
+                        <h4>or login with</h4>
+                        <div class="row">
+                          <div class="col-sm">
+                            <a href="#"><span><i class="fa fa-facebook"></i></span>FACEBOOK</a>
+                          </div>
+                          <div class="col-sm">
+                            <a href="#"><span><i class="fa fa-google-plus"></i></span>GOOGLE</a>
+                          </div>
+                          <div class="col-sm">
+                            <a href="#"><span><i class="fa fa-twitter"></i></span>TWITTER</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="havean">
+                        <p>You don't have an account? <a class="p-step" href="javascript:void(0)">Register Now</a> </p>
+                      </div>
+                    </div>
+                    <form *ngIf="f1" [formGroup]="forgForm1" (ngSubmit)="onForg1()">
+                      <fieldset>
+                        <label>Username or Email Address</label>
+                        <input type="text" formControlName="email" placeholder="Enter Username or Email Address">
+
+                        <span><i class="fa fa-user"></i></span>
+                      </fieldset>
+
+                      <button type="submit" class="btn1">SUBMIT</button>
+                      <div class="agree"><input type="checkbox" class="checkbox-custom">
+                        <p>Remember Password</p> <a href="#">Forgot Password?</a>
+                      </div>
+                    </form>
+                    <div *ngIf="email&&f1" class="error-message">Incorrect email </div>
+
+
+                    <form *ngIf="f2" [formGroup]="forgForm2" (ngSubmit)="onForg2()">
+                      <fieldset>
+                        <label>code</label>
+                        <input type="text" formControlName="code" placeholder="Enter Username or Email Address">
+
+                        <span><i class="fa fa-user"></i></span>
+                      </fieldset>
+
+                      <button type="submit" class="btn1">SUBMIT</button>
+                      <div class="agree"><input type="checkbox" class="checkbox-custom">
+                        <p>Remember Password</p> <a href="#">Forgot Password?</a>
+                      </div>
+                    </form>
+                    <div *ngIf="code&&f2" class="error-message">Incorrect code </div>
+                    <form *ngIf="f3" [formGroup]="forgForm3" (ngSubmit)="onForg3()">
+
+
+                      <fieldset>
+                        <label>Password</label>
+                        <input type="password" formControlName="password" placeholder="Enter Password">
+                        <span><i class="flaticon-lock"></i></span>
+                      </fieldset>
+                      <fieldset>
+                        <label>Confirm Password</label>
+                        <input type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+                        <span><i class="flaticon-lock"></i></span>
+                      </fieldset>
+                      <button type="submit" class="btn1">SUBMIT</button>
+                      <div class="agree"><input type="checkbox" class="checkbox-custom">
+                        <p>I agree with the <a href="#">Terms of Use</a></p>
+                      </div>
+                    </form>
+                  </div>
+                  <div *ngIf="password&&f3" class="error-message">Incorrect Password </div>
+
+
+
+
+
+
+
+
+                </div>
+                <div id="register" class="lighting">
+                  <div class="registers">
+                    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+                      <fieldset>
+                        <label>Username or Email Address</label>
+                        <input type="text" formControlName="email" placeholder="Enter Username or Email Address">
+                        <span><i class="fa fa-user"></i></span>
+                      </fieldset>
+                      <fieldset>
+                        <label>Password</label>
+                        <input type="password" formControlName="password" placeholder="Enter Password">
+                        <span><i class="flaticon-lock"></i></span>
+                      </fieldset>
+                      <fieldset>
+                        <label>Confirm Password</label>
+                        <input type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+                        <span><i class="flaticon-lock"></i></span>
+                      </fieldset>
+                      <button type="submit" class="btn1">REGISTER</button>
+                      <div class="agree"><input type="checkbox" class="checkbox-custom">
+                        <p>I agree with the <a href="#">Terms of Use</a></p>
+                      </div>
+                    </form>
+                    <div *ngIf="registe&&!registe2" class="error-message">Field cannot be empty</div>
+                    <div *ngIf="registe2" class="error-message">Incorrect email</div>
+                    <div class="login_ac">
+                      <h4>or login with</h4>
+                      <div class="row">
+                        <div class="col-sm">
+                          <a href="#"><span><i class="fa fa-facebook"></i></span>FACEBOOK</a>
+                        </div>
+                        <div class="col-sm">
+                          <a href="#"><span><i class="fa fa-google-plus"></i></span>GOOGLE</a>
+                        </div>
+                        <div class="col-sm">
+                          <a href="#"><span><i class="fa fa-twitter"></i></span>TWITTER</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="havean">
+                      <p>Already have an account? <a class="n-step" href="javascript:void(0)">Login</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+
+<section style="--tw-bg-opacity: 1;
+background-color: rgb(18 14 40 / var(--tw-bg-opacity));" class="subscribe-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="row mr-0">
+          <div class="col-md-12 col-xl-6 col-sm-12">
+            <div class="sub_con">
+              <span><img src="assets/images/icons/3.png" alt="" /></span>
+              <div class="con">
+                <h3>Get GAMES Notifications</h3>
+                <p>Free Subscribe Our Newsletter Now!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-xl-6 col-sm-12">
+            <div class="sub_form">
+              <form>
+                <input type="email" placeholder="Type Your Email Address">
+                <input class="btn1" type="submit" value="Submit">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</section>
+
+
+<footer style="--tw-bg-opacity: 1;
+background-color: rgb(18 14 40 / var(--tw-bg-opacity));">
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-12">
+          <div class="foo-about">
+            <h3>Who we are</h3>
+            <p>At Seek Team, we are passionate about connecting gamers with the opportunities
+              they deserve. Founded by a group of avid gamers and e-sports enthusiasts, our mission
+              is to bridge the gap between talented players, ambitious teams, and dynamic multigaming
+              organizations.</p>
+            <a href="#" class="link">READ MORE</a>
+            <ul class="social_link">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="foo_link">
+                <h3>PLAYERS</h3>
+                <ul>
+                  <li><a href="#">Create your resume</a></li>
+                  <li><a href="/serch">Search players</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="foo_link">
+                <h3>TEAMS</h3>
+                <ul>
+                  <li><a href="#">Create team</a></li>
+                  <li><a href="#">Search teams</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="foo_link mr-b0">
+                <h3>MULTIGAMING</h3>
+                <ul>
+                  <li><a href="#">Create your multigaming</a></li>
+                  <li><a href="#">Search multigamings</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="foo_link">
+                <h3>APP</h3>
+                <ul>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Premium</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="foo_link">
+                <h3>RESOURCES</h3>
+                <ul>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Manage cookies</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="foo_link mr-b0">
+                <h3>GUIDES</h3>
+                <ul>
+                  <li><a href="#">How to join CS:GO team ?</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="copyright">
+            <p>© Copyright - Praca Cerja. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,118 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(14, 11, 32, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s forwards;
+}
+
+.modal-backdrop.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+.modal-content {
+    background: #312f41;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideIn 0.5s forwards;
+
+    width: 800px;
+    position: relative;
+}
+
+.modal-content.fade-out {
+    animation: slideOut 0.5s forwards;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #f0f2f5;
+}
+
+h2,
+h3 {
+    margin: 10px 0;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #f0f2f5;
+    height: 75px;
+    border-radius: 5px 1px 1px 5px;
+    margin: 20px 0;
+}
+
+.alert img {
+    margin-right: 10px;
+}
+
+.btn-create-cv {
+    background: linear-gradient(to right, #007bff, #00d4ff);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1px 5px 5px 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 74.8px;
+}
+
+.btn-create-cv:hover {
+    background: linear-gradient(to right, #0056b3, #00a3cc);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}

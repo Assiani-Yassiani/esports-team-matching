@@ -1,0 +1,322 @@
+.input-container form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    width: 20px;
+    /* Espace entre la checkbox et le label */
+}
+
+input {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    ;
+    height: 60px;
+    border-radius: 4px;
+    background-color: transparent;
+    /* Couleur de fond personnalisée */
+    color: #ccc;
+    /* Couleur du texte */
+}
+
+button {
+    height: 60px;
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+
+li {
+    margin-top: 10px;
+}
+
+.item-container {
+    width: 246px;
+    display: flex;
+    /* Utilise Flexbox pour aligner les éléments horizontalement */
+    justify-content: space-between;
+    /* Espacer les éléments de manière égale */
+    align-items: center;
+    /* Centrer les éléments verticalement */
+    padding: 5px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 4px;
+    color: #ccc;
+}
+
+.item-container span {
+    flex-grow: 1;
+    /* Permet à l'élément de prendre tout l'espace disponible */
+}
+
+.item-container button {
+    background-color: #f44336;
+    /* Red */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.textarea-container {
+    margin-top: 15px;
+    /* Espace au-dessus du textarea */
+}
+
+textarea {
+    width: 1000px;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 4px;
+    background-color: transparent;
+    /* Couleur de fond personnalisée */
+    color: rgba(204, 204, 204, 0.5);
+    /* Couleur du texte */
+    box-sizing: border-box;
+    resize: vertical;
+    /* Permet de redimensionner verticalement */
+    min-height: 100px;
+    /* Hauteur minimale */
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(199, 35, 35, 0.1);
+    background-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    color: #a6a1a1;
+}
+
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 4px;
+    background-color: transparent;
+    /* Couleur de fond personnalisée */
+    color: rgba(204, 204, 204, 0.5);
+    /* Couleur du texte */
+    box-sizing: border-box;
+}
+
+
+
+
+select:focus,
+textarea:focus {
+    border-color: #007BFF;
+    /* Couleur de la bordure en focus */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    /* Permet de redimensionner verticalement */
+    min-height: 100px;
+    /* Hauteur minimale */
+}
+
+button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+select {
+
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 4px;
+    background-color: #fff;
+    /* Couleur de fond personnalisée */
+    color: #333;
+    /* Couleur du texte */
+    box-sizing: border-box;
+}
+
+select:focus,
+input:focus {
+    border-color: #007BFF;
+    /* Couleur de la bordure en focus */
+    outline: none;
+}
+
+
+.flex-container {
+    width: 1080px;
+    justify-content: flex-start;
+    /* Aligne les éléments horizontalement à gauche */
+
+    flex-direction: column;
+
+    /* Espace les éléments de manière égale */
+    align-items: left;
+    /* Centre les éléments verticalement */
+    height: 100px;
+    /* S'assure que la div prend toute la hauteur de la vue */
+}
+
+
+.checkbox-container {
+    padding-left: 37px;
+    justify-content: flex-start;
+    /* Aligne les éléments horizontalement à gauche */
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    /* Espace entre chaque groupe de checkboxes */
+}
+
+.form-group2 {
+    display: flex;
+    align-items: left;
+    width: 1000px;
+}
+
+
+label {
+    font-size: 16px;
+    color: #c4c2c2;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+
+
+
+.checkbox-column-container {
+    padding-left: 37px;
+    display: flex;
+
+    width: 600px;
+    justify-content: space-between;
+    /* Espace les colonnes de manière égale */
+    gap: 20px;
+    /* Espace entre les colonnes */
+}
+
+.checkbox-column {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    /* Réduisez l'espace entre chaque checkbox */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    /* Espace entre la checkbox et le label */
+}
+
+label {
+    font-size: 16px;
+    color: #c4c2c2;
+}
+
+.description-container {
+    margin: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: normal;
+    color: #c8c5c5;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.note {
+    font-size: 16px;
+    color: #838181;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    color: #999;
+}
+
+
+.btn-submit {
+    background-color: #26a8d6;
+    /* Couleur du bouton */
+    color: white;
+    /* Couleur du texte */
+    padding: 10px 30px;
+    /* Espacement intérieur du bouton */
+    border: none;
+    /* Pas de bordure */
+    border-radius: 5px;
+    /* Bords arrondis */
+    font-size: 16px;
+    /* Taille de la police */
+    cursor: pointer;
+    /* Curseur de la souris */
+    transition: background-color 0.3s;
+    width: 670px;
+    /* Transition pour effet de survol */
+}
+
+.btn-submit:hover {
+    background-color: #1e90c1;
+
+
+    /* Couleur de fond au survol */
+}

@@ -1,0 +1,158 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 60px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">CREATE YOUR RESUME</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+<section>
+
+
+
+
+    <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+        <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+            <h3>BASIC INFORMATIONS</h3>
+            <br><br>
+            <div style="display: flex; justify-content: flex-start;gap: 150px;">
+                <div style="width: 325px;">
+                    <div class="alert-hide"
+                        [ngClass]="{'alert-show': resumeForm.get('comments')?.invalid && (resumeForm.get('comments')?.touched || submitted), }"
+                        style="width: 100%; display: flex; justify-content: flex-end;">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Diamond">
+                    </div>
+                    <div class="form-group" style="display: flex;width:500px;">
+                        <label for="numberNeeded">Number Needed</label>
+
+
+                        <input
+                            [ngClass]="{'error-placeholder-number': resumeForm.get('comments')?.invalid && (resumeForm.get('comments')?.touched || submitted),'number':!( resumeForm.get('comments')?.invalid && (resumeForm.get('comments')?.touched || submitted)) }"
+                            type="number" id="numberNeeded" style="margin-left: 15%; width: 130px; height: 45px;"
+                            formControlName="comments" />
+
+                    </div>
+                    <div [ngClass]="{'alert-show': resumeForm.get('comments')?.invalid && (resumeForm.get('comments')?.touched || submitted)}"
+                        class="alert alert-hide" style="width:325px">
+                        <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                        <div style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;">
+                            {{ getErrorMessage()}}
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="width: 325px;">
+                    <div class="alert-hide"
+                        [ngClass]="{'alert-show': resumeForm.get('comments2')?.invalid && (resumeForm.get('comments2')?.touched || submitted) }"
+                        style="width: 100%; display: flex; justify-content: flex-end;">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Diamond">
+                    </div>
+                    <div class="form-group" style="display: flex;width:500px;">
+                        <label for="numberNeeded">Minimum age</label>
+
+
+                        <input
+                            [ngClass]="{'error-placeholder-number': resumeForm.get('comments2')?.invalid && (resumeForm.get('comments2')?.touched || submitted),'number':!( resumeForm.get('comments2')?.invalid && (resumeForm.get('comments2')?.touched || submitted)) }"
+                            type="number" id="numberNeeded" style="margin-left: 20%; width: 130px; height: 45px;"
+                            formControlName="comments2" />
+
+                    </div>
+                    <div class="alert alert-hide"
+                        [ngClass]="{'alert-show': resumeForm.get('comments2')?.invalid && (resumeForm.get('comments2')?.touched || submitted)}"
+                        style="width:325px">
+                        <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                        <div style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;">
+                            {{ getErrorMessage2()}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="participation" name="participation" formControlName="participation">
+                    <label for="participation">Participation financière du joueur ?</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remunere" name="remunere" formControlName="remunere">
+                    <label for="remunere">Rémunéré</label>
+                </div>
+            </div>
+            <br><br>
+            <h3>TEAM TYPE</h3>
+            <div class="form-group" style="width:600px">
+                <div class="columns">
+                    <div class="column" *ngFor="let type of teamTypes; let i = index">
+                        <input type="radio" [value]="type.value" formControlName="teamType" /> {{ type.label }}
+                    </div>
+                </div>
+                <div class="alert alert-hide"
+                    [ngClass]="{'alert-show': (resumeForm.get('teamType')?.hasError('required') && (resumeForm.get('teamType')?.touched || submitted))  }"
+                    style="margin-left: 0%; width: 570px;">
+                    <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                    <div style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;">
+                        Team type is required
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="description-container">
+                <h2 class="title">DESCRIPTION</h2>
+                <h3 class="subtitle">A LONG AND NICE DESCRIPTION WILL INCREASE YOUR CHANCES TO GET RECRUITED (OR TO
+                    RECRUIT).</h3>
+                <p class="note">Don't put any direct contact information (emails, discord usernames, or others...).</p>
+                <p class="description">Players or teams can contact you through Seek Team for free and in an unlimited
+                    way as long as your resume or offers are active. The recommended way is to handle your entire
+                    recruitment workflow on the website.</p>
+            </div>
+            <div class="textarea-container">
+                <div class="alert-hide"
+                    [ngClass]="{'alert-show': resumeForm.get('description')?.invalid && (resumeForm.get('description')?.touched || submitted) }"
+                    style="width: 81.5%; display: flex; justify-content: flex-end;">
+                    <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Diamond">
+                </div>
+                <textarea
+                    [ngClass]="{'error-placeholder': resumeForm.get('description')?.invalid && (resumeForm.get('description')?.touched || submitted)}"
+                    style="height: 250px;" formControlName="description" placeholder="Description..."></textarea>
+                <div class="alert alert-hide"
+                    [ngClass]="{'alert-show': (resumeForm.get('description')?.hasError('required') && (resumeForm.get('description')?.touched || submitted))  }"
+                    style="width:1000px">
+                    <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                    <div style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;">
+                        Description is required
+                    </div>
+
+                </div>
+            </div>
+            <br>
+        </div>
+        <br><br>
+        <div class="text-center">
+            <button type="submit" class="btn btn-submit">ENVOYER</button>
+        </div>
+    </form>
+
+
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

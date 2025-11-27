@@ -1,0 +1,447 @@
+.input-container form {
+    display: flex;
+
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    /* Espace entre la checkbox et le label */
+}
+
+input {
+    width: 150px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    ;
+    height: 45px;
+
+    background-color: transparent;
+    /* Couleur de fond personnalisée */
+    color: #ccc;
+    /* Couleur du texte */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 13px;
+    background-color: transparent;
+    /* Couleur de fond personnalisée */
+    color: rgba(204, 204, 204, 0.5);
+    /* Couleur du texte */
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.add-button {
+    height: 60px;
+    background-color: #218fa0;
+
+    border: none;
+    color: #ffffff;
+
+    padding-left: 18px !important;
+    margin-top: 6%;
+    height: 45px;
+    width: 45px;
+    border-radius: 13px !important;
+
+
+
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+
+
+}
+
+.add-button:hover {
+    background-color: #117382;
+
+
+
+}
+
+.item-container button {
+    border-radius: 13px !important;
+    margin-top: 6%;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    top: -13px;
+    left: 61px;
+    background-color: rgb(175 53 82);
+    margin-top: 6%;
+    display: inline-block;
+    /* Red */
+    border: none;
+    color: #ffffff;
+    padding-left: 18px !important;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+
+
+
+
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+
+li {
+    margin-top: 10px;
+}
+
+.item-container {
+    height: 45px;
+    width: 400px !important;
+    display: flex;
+    /* Utilise Flexbox pour aligner les éléments horizontalement */
+    justify-content: space-between;
+    /* Espacer les éléments de manière égale */
+    align-items: center;
+    /* Centrer les éléments verticalement */
+    padding: 5px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 4 px;
+    color: #ccc;
+    border-radius: 13px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    /* Transition pour l'opacité et le déplacement */
+}
+
+.fade-in {
+    opacity: 1;
+    /* Rendre visible */
+    transform: translateY(0);
+    /* Ramener à sa position d'origine */
+}
+
+.item-container span {
+    flex-grow: 1;
+
+    /* Permet à l'élément de prendre tout l'espace disponible */
+}
+
+.item-container button {
+    position: relative;
+    top: -13px;
+    left: 61px;
+    background-color: rgb(188, 69, 97);
+    /* Red */
+    border: none;
+    color: #ffffff;
+    padding-left: 18px !important;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+
+
+
+}
+
+.textarea-container {
+    margin-top: 15px;
+    /* Espace au-dessus du textarea */
+}
+
+.alert {
+    margin-top: 7px;
+    width: 400px !important;
+    background-color: #2f1c2e;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 13px;
+
+}
+
+
+.alert-hide {
+    width: 0;
+    opacity: 0;
+
+    transition: opacity 0.2s ease-in-out
+}
+
+.alert-show {
+    opacity: 1;
+
+
+}
+
+
+textarea {
+    width: 1000px;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 13px;
+    background-color: transparent;
+    /* Couleur de fond personnalisée */
+    color: rgba(204, 204, 204, 0.5);
+    /* Couleur du texte */
+    box-sizing: border-box;
+    resize: vertical;
+    /* Permet de redimensionner verticalement */
+    min-height: 100px;
+    /* Hauteur minimale */
+}
+
+.error-placeholder {
+    background-color: #ffeeee;
+    background-color: #ffeeee;
+    /* Couleur de fond */
+    color: #ff5555;
+    /* Couleur du texte */
+}
+
+.error-placeholder::placeholder {
+    color: #ff5555;
+    /* Couleur du placeholder en cas d'erreur */
+}
+
+
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(199, 35, 35, 0.1);
+    background-color: transparent;
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+    color: #a6a1a1;
+}
+
+
+
+
+
+
+
+
+textarea {
+    resize: vertical;
+    /* Permet de redimensionner verticalement */
+    min-height: 100px;
+    transition: box-shadow 0.3s ease;
+    /* Hauteur minimale */
+}
+
+button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+select {
+
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    /* Couleur #ccc avec opacité de 50% */
+    border-radius: 4px;
+    background-color: #fff;
+    /* Couleur de fond personnalisée */
+    color: #333;
+    /* Couleur du texte */
+    box-sizing: border-box;
+    transition: border 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover,
+input:not([type="checkbox"]):hover,
+textarea:hover {
+    border: 2px solid#474454;
+    /* Bordure rose clair */
+    border-radius: 13px;
+    /* Coins arrondis */
+    box-shadow: 0 0 1px 5px rgba(84, 83, 83, 0.2);
+    /* Ombre rose clair avec une opacité faible */
+    outline: none;
+    /* Supprime l'effet d'outline par défaut */
+}
+
+.flex-container {
+    width: 1080px;
+    justify-content: flex-start;
+    /* Aligne les éléments horizontalement à gauche */
+    align-items: center;
+    flex-direction: column;
+
+    /* Espace les éléments de manière égale */
+    align-items: left;
+    /* Centre les éléments verticalement */
+    height: 100px;
+    /* S'assure que la div prend toute la hauteur de la vue */
+}
+
+
+.checkbox-container {
+    padding-left: 37px;
+    justify-content: flex-start;
+    /* Aligne les éléments horizontalement à gauche */
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    /* Espace entre chaque groupe de checkboxes */
+}
+
+.form-group2 {
+    display: flex;
+    align-items: left;
+    width: 1000px;
+}
+
+
+label {
+    font-size: 16px;
+    color: #c4c2c2;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+
+
+
+.checkbox-column-container {
+    padding-left: 37px;
+    display: flex;
+
+    width: 600px;
+    justify-content: space-between;
+    /* Espace les colonnes de manière égale */
+    gap: 20px;
+    /* Espace entre les colonnes */
+}
+
+.checkbox-column {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    /* Réduisez l'espace entre chaque checkbox */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    /* Espace entre la checkbox et le label */
+}
+
+label {
+    font-size: 16px;
+    color: #c4c2c2;
+}
+
+.description-container {
+    margin: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: normal;
+    color: #c8c5c5;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.note {
+    font-size: 16px;
+    color: #838181;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    color: #999;
+}
+
+
+.btn-submit {
+    background-color: #26a8d6;
+    /* Couleur du bouton */
+    color: white;
+    /* Couleur du texte */
+    padding: 10px 30px;
+    /* Espacement intérieur du bouton */
+    border: none;
+    /* Pas de bordure */
+    border-radius: 5px;
+    /* Bords arrondis */
+    font-size: 16px;
+    /* Taille de la police */
+    cursor: pointer;
+    /* Curseur de la souris */
+    transition: background-color 0.3s;
+    width: 670px;
+    /* Transition pour effet de survol */
+}
+
+.btn-submit:hover {
+    background-color: #1e90c1;
+
+
+    /* Couleur de fond au survol */
+}
+
+.item-container button:hover {
+    background-color: rgb(175 53 82);
+
+}
+
+.btn-submit:hover .err {
+
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(175 53 82);
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+
+}

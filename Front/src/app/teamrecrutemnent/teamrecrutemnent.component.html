@@ -1,0 +1,149 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 20px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">MANAGE YOUR
+                                    TEAM</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br>
+<div class="categories-area">
+    <div class="container"></div>
+    <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+        <div class="row">
+            <div class="categories" style="border-radius: 8px; width:260px;height:260px;">
+                <a style="border-radius: 8px; width:260px;height:260px;">
+                    <img style="border-radius: 8px; width: 100%;height: 100%;" src="assets/images/rabia/profil.png"
+                        alt="">
+                </a>
+            </div>
+            <br><br>
+            <br>
+            <br>
+            <br>
+
+
+
+            <div style="width:40px"></div>
+            <div style=" flex-direction: column;display: flex; justify-content: center; align-items: left;">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h5 style="font-weight: 600;font-size: 1.5rem; line-height: 1.5rem; color: rgb(163, 163, 163);">
+                    Player
+                </h5>
+                <h5 style="font-weight: 700;font-size: 4.6rem; line-height: 0rem;">
+                    {{ resume.comments}}
+                </h5>
+                <div style="height: 27px;"></div>
+
+                <h5 style="font-weight: 600;font-size: 2rem; line-height: 2.5rem; color: rgb(163, 163, 163);">
+                    {{ resume.game}} | {{resume.platform}} | Tunisia
+                </h5>
+            </div>
+            <div style="width:450px"></div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button [routerLink]="['/profil']" class="btn-outline">My resume</button>
+            </div>
+        </div>
+        <div style="width:450px"></div>
+
+    </div>
+
+</div>
+<br>
+<br>
+
+
+<section class="my-sections">
+    <div class="container">
+        <div class="section">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="section-title">APPLICATIONS</h2>
+
+            </div>
+            <div *ngIf="!app.length" class="card">
+                <br>
+                <img style="width: 100px; height: 100px;" src="assets/images/rabia/mot-de-passe.png" alt="">
+                <br>
+
+                <p style=" color: #c8c5c5;">NO APPLICATIONS YET</p>
+            </div>
+            <div *ngIf="app.length">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NEW</th>
+                            <th>TEAM</th>
+                            <th>ACTION</th>
+                            <th>CRETED</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ap of app; let i = index"
+                            [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+                            <td>
+                                <img *ngIf="!ap.view&&ap.idt!=null" style="margin-right: 5%; height: 35px; width: 35px;"
+                                    src="assets/images/rabia/star (2).png" alt="Check">
+
+                            </td>
+                            <td> <img (click)="view(ap.id)" class="b11"
+                                    style="margin-right: 5%; height: 35px; width: 35px;"
+                                    src="assets/images/rabia/oeil.png" alt="Check"> </td>
+                            <td><label *ngIf="ap.idto==null" class="switch">
+                                    <input (click)="status(ap.id!)" type="checkbox" [(ngModel)]="ap.status">
+                                    <span class="slider round">
+                                        <span class="switch-label"
+                                            [ngClass]="{'switch-on':ap.status, 'switch-off': !ap.status}">
+                                            {{ ap.status ? '' : 'off' }}
+                                        </span>
+                                    </span>
+                                </label></td>
+                            <td> {{ getTimeAgo(ap.creationDate!) }}</td>
+                            <td class="actions">
+
+
+                                <img *ngIf="!ap.status" class="b11" style="margin-right: 5%; height: 35px; width: 35px;"
+                                    src="assets/images/rabia/horloge-murale (3).png" alt="Check">
+
+
+                                <img (click)="discord(ap.id!)" *ngIf="ap.status" class="b11"
+                                    style="margin-right: 5%; height: 35px; width: 35px;"
+                                    src="assets/images/rabia/grouper.png" alt="Check">
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<app-teamapp [status]="stat" [items1]="items1" [items2]="items2" [items3]="items3" [items4]="items4" [items5]="items5"
+    [resume]="team" [show]="isModalVisibleapp" (close)="hideModalapp()"></app-teamapp>
+<app-discord [link_basic]="link" [show]="isModalVisibledisc" (close)="
+    hideModaldisc()"></app-discord>

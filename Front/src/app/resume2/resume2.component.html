@@ -1,0 +1,27 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 60px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">CREATE YOUR RESUME</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="select">Choose an option:</label>
+        <p-dropdown [options]="options" formControlName="selectedOption" placeholder="Select an option"></p-dropdown>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

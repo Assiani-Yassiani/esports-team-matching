@@ -1,0 +1,117 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 20px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">MANAGE YOUR
+                                    TEAM</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br>
+<div class="categories-area">
+    <div class="container"></div>
+    <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+        <div class="row">
+            <div class="categories" style="border-radius: 8px; width:260px;height:260px;">
+                <a style="border-radius: 8px; width:260px;height:260px;">
+                    <img style="border-radius: 8px; width: 100%;height: 100%;" src="assets/images/rabia/profil.png"
+                        alt="">
+                </a>
+            </div>
+            <br><br>
+            <br>
+            <br>
+            <br>
+
+
+
+            <div style="width:40px"></div>
+            <div style=" flex-direction: column;display: flex; justify-content: center; align-items: left;">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h5 style="font-weight: 600;font-size: 1.5rem; line-height: 1.5rem; color: rgb(163, 163, 163);">
+                    Team
+                </h5>
+                <h5 style="font-weight: 700;font-size: 4.6rem; line-height: 0rem;">
+                    {{ resume.comments}}
+                </h5>
+                <div style="height: 27px;"></div>
+
+                <h5 style="font-weight: 600;font-size: 2rem; line-height: 2.5rem; color: rgb(163, 163, 163);">
+                    {{ resume.game}} | {{resume.platform}} | {{resume.region}}
+                </h5>
+            </div>
+            <div style="width:450px"></div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button [routerLink]="['/up_team']" class="btn-outline">Update resume</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="profile-container">
+                <div class="profile-block" style="display: flex; justify-content: center;align-items: center;">
+                    <img style="height: 27px; width: 27px;" src="assets/images/rabia/star.png" alt="Diamond">
+                    <div style="width:10px"></div>
+                    <p class="not-premium">NOT PREMIUM</p>
+                </div>
+                <div class="profile-block views">
+                    <p><strong>0</strong><br> views</p>
+                </div>
+                <div class="profile-block contacts">
+                    <p><strong>0</strong><br> no contact from teams yet</p>
+                </div>
+
+                <div class="level-container">
+                    <h3>LEVEL</h3>
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+            <div style="width:900px" class="profile-info-container">
+                <div class="profile-section">
+                    <h3>SEARChED PROFILE</h3>
+                    <p>{{offer.teamType}}</p>
+                </div>
+                <div class="profile-section profile-row">
+                    <div class="profile-column">
+                        <h3>MINIMUM AGE</h3>
+                        <p>{{offer.comments2}}</p>
+                    </div>
+                    <div class="profile-column">
+                        <h3>PAID POSITION</h3>
+                        <p>{{offer.remunere}}</p>
+
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <h3>HAS THE PLAYER TO PARTICIPATE FINANCIALLY </h3>
+                    <p>{{offer.participation}}</p>
+
+                </div>
+                <div class="profile-section">
+                    <h3>DESCRIPTION</h3>
+                    <p>{{ resume.description || 'No description yet' }}</p>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

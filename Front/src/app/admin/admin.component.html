@@ -1,0 +1,250 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 60px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">MY DASHBOARD</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="my-sections">
+    <div class="container">
+        <div class="section">
+            <div style="flex-direction: column;" class="d-flex  ">
+                <div style="width:100%; ">
+                    <h2 style="justify-content: center;" class="section-title d-flex"><img
+                            style="margin-right: 10px; height: 70px; width:70px"
+                            src="assets/images/rabia/couronne (2).png" alt=""> <span
+                            style=" font-size: 40px; margin-top: 20px;" class="dancing-script-bold">MY
+                            RESUME</span> <img style=" margin-left: 20px;height: 70px; width:70px"
+                            src="assets/images/rabia/couronne (2).png" alt=""></h2>
+
+                </div>
+                <div style="display:flex; justify-content: flex-end;">
+
+
+
+
+                    <button [routerLink]="['/resume']" *ngIf="resumes.length"
+                        style="padding-bottom: 17px;width:  55.2px; height: 55.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                        class="b11">
+                        <img src="assets/images/rabia/menu.png" alt="Check">
+                    </button>
+                    <div style="height: 10px;"></div>
+                </div>
+            </div>
+            <div *ngIf="!resumes.length" class="card">
+                <button [routerLink]="['/resume']" class="b1">CREATE RESUME</button>
+            </div>
+            <div *ngIf="resumes.length">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PSEUDO</th>
+                            <th>GAME</th>
+                            <th>LEVEL</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style=" border-radius: 100px;" *ngFor="let resume of resumes; let i = index"
+                            [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+                            <td style="border-radius: 15px 0 0 15px;">{{resume.comments}}</td>
+                            <td>{{resume.game}}</td>
+                            <td>{{resume.priority}}</td>
+                            <td><label class="switch">
+                                    <input (click)="actif(resume)" type="checkbox" [(ngModel)]="resume.actif">
+                                    <span class="slider round">
+                                        <span class="switch-label"
+                                            [ngClass]="{'switch-on': resume.actif, 'switch-off': !resume.actif}">
+                                            {{ resume.actif ? '' : ' off' }}
+                                        </span>
+                                    </span>
+                                </label></td>
+                            <td style="border-radius: 0  15px 15px 0;">
+                                <button (click)="resumefunc(resume.id)"
+                                    style="margin-left: 37%; width: 55.2px; height: 55.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                                    class="b11">
+                                    <img src="assets/images/rabia/oeil (3).png" alt="Check">
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                <br>
+                <div class="pagination-container">
+                    <span style="margin-right: 1%;" class="arrow">&laquo;&laquo;</span>
+                    <span class="arrow">&laquo;</span>
+                    <span class="page-number">1</span>
+                    <span class="arrow">&raquo;</span>
+                    <span style="margin-left: 1%;" class="arrow">&raquo;&raquo;</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section">
+            <div style="flex-direction: column;" class="d-flex ">
+                <div style="flex-direction: column;" style="width:100%; ">
+                    <h2 style="justify-content: center;" class="section-title d-flex"><img
+                            style="margin-right: 10px; height: 70px; width:70px"
+                            src="assets/images/rabia/couronne (2).png" alt=""> <span
+                            style=" font-size: 40px; margin-top: 20px;" class="dancing-script-bold">MY
+                            TEAMS</span> <img style=" margin-left: 20px;height: 70px; width:70px"
+                            src="assets/images/rabia/couronne (2).png" alt=""></h2>
+
+                </div>
+                <div style="display:flex; justify-content: flex-end;">
+                    <button [routerLink]="['/team']"
+                        style="padding-bottom: 17px;width:  55.2px; height: 55.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                        class="b11">
+                        <img src="assets/images/rabia/menu.png" alt="Check">
+                    </button>
+                    <div style="height: 10px;"></div>
+                </div>
+            </div>
+            <div *ngIf="!teams.length" class="card">
+                <button [routerLink]="['/team']" class="b2">CREATE TEAM</button>
+            </div>
+            <div *ngIf="teams.length">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>GAME</th>
+                            <th>LEVEL</th>
+
+                            <th>RECRUITMENT OFFER</th>
+
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let team of teams; let i = index"
+                            [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+                            <td style="border-radius: 10px 0 0 10px;">{{team.comments}}</td>
+                            <td>{{team.game}}</td>
+
+                            <td>{{team.priority}}</td>
+
+                            <td>0</td>
+                            <td style="border-radius: 0 10px 10px 0;  ">
+                                <div style="display: flex; justify-content: center;">
+                                    <button
+                                        style="width:  49.2px; height: 49.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                                        class="b11">
+                                        <img src="assets/images/rabia/deconnexion.png" alt="Check">
+                                    </button>
+                                    <button (click)="teamfunc(team.id)"
+                                        style="padding-bottom: 17px;width:  55.2px; height: 55.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                                        class="b11">
+                                        <img src="assets/images/rabia/oeil (3).png" alt="Check">
+                                    </button>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <div class="pagination-container">
+                    <span style="margin-right: 1%;" class="arrow">&laquo;&laquo;</span>
+                    <span class="arrow">&laquo;</span>
+                    <span class="page-number">1</span>
+                    <span class="arrow">&raquo;</span>
+                    <span style="margin-left: 1%;" class="arrow">&raquo;&raquo;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div style="flex-direction: column;" class="d-flex ">
+                <div style="width:100%; ">
+                    <h2 style="justify-content: center;" class="section-title d-flex"><img
+                            style="margin-right: 10px; height: 70px; width:70px"
+                            src="assets/images/rabia/couronne (2).png" alt=""> <span
+                            style=" font-size: 40px; margin-top: 20px;" class="dancing-script-bold">
+                            MY MULTIGAMINGS</span> <img style=" margin-left: 20px;height: 70px; width:70px"
+                            src="assets/images/rabia/couronne (2).png" alt=""></h2>
+
+                </div>
+                <div style="display:flex; justify-content: flex-end;">
+                    <button [routerLink]="['/multi']" *ngIf=" multigamings.length"
+                        style="padding-bottom: 17px;width:  55.2px; height: 55.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                        class="b11">
+                        <img src="assets/images/rabia/menu.png" alt="Check">
+                    </button>
+                    <div style="height: 10px;"></div>
+                </div>
+            </div>
+
+            <div *ngIf="!multigamings.length" class="card">
+                <button [routerLink]="['/multi']" class="b3">CREATE MULTIGAMING</button>
+            </div>
+            <div *ngIf="multigamings.length">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>ATTACHED TEAMS</th>
+                            <th>COUNTRY</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-radius: 10px;" *ngFor="let multigaming of multigamings; let i = index"
+                            [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+                            <td style="border-radius: 10px 0 0 10px;">{{multigaming.comments}}</td>
+                            <td>
+                                <span> 0</span>
+                            </td>
+                            <td>{{multigaming.region}}</td>
+                            <td style="border-radius: 0 10px 10px 0;">
+                                <div style=" display: flex; justify-content: center;">
+                                    <button (click)="multifunc(multigaming.id)"
+                                        style="width:  49.2px; height: 49.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                                        class="b11">
+                                        <img src="assets/images/rabia/deconnexion.png" alt="Check">
+                                    </button>
+                                    <button (click)="multifunc(multigaming.id)"
+                                        style=" padding-bottom: 17px;width:  55.2px; height: 55.2px; border-radius: 5px; display: flex; justify-content: center; align-items: center;"
+                                        class="b11">
+                                        <img src="assets/images/rabia/oeil (3).png" alt="Check">
+                                    </button>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <div class="pagination-container">
+                    <span style="margin-right: 1%;" class="arrow">&laquo;&laquo;</span>
+                    <span class="arrow">&laquo;</span>
+                    <span class="page-number">1</span>
+                    <span class="arrow">&raquo;</span>
+                    <span style="margin-left: 1%;" class="arrow">&raquo;&raquo;</span>
+                </div>
+                <br>
+                <br>
+
+
+            </div>
+        </div>
+    </div>
+</section>

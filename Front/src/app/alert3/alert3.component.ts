@@ -1,0 +1,49 @@
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-alert3',
+  templateUrl: './alert3.component.html',
+  styleUrl: './alert3.component.scss'
+})
+export class Alert3Component {
+  @Input() show: boolean = false;
+  @Output() close = new EventEmitter<void>();
+  constructor(private route: Router) {
+
+  }
+
+  closeModal() {
+    this.show = false
+
+    this.close.emit();
+
+  }
+
+  createCv() {
+    // Your logic to create a CV
+    this.route.navigate(['team'])
+  }
+
+  onBackdropClick(event: MouseEvent) {
+    this.triggerCloseAnimation();
+  }
+
+  onContentClick(event: MouseEvent) {
+    event.stopPropagation();
+  }
+
+  triggerCloseAnimation() {
+    const backdrop = document.querySelector('.modal-backdrop');
+    const content = document.querySelector('.modal-content');
+    if (backdrop && content) {
+      backdrop.classList.add('fade-out');
+      content.classList.add('fade-out');
+      setTimeout(() => {
+        this.closeModal();
+      }, 500); // Duration of the fade-out animation
+    }
+  }
+
+
+}

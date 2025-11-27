@@ -1,0 +1,379 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 60px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">CREATE YOUR RESUME</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+<section>
+
+
+    <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+        <h3>EXPERIENCES</h3>
+
+        <div style="padding-left: 17px;" class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="input-container">
+                    <form style="width:500px" [formGroup]="resumeForm" (ngSubmit)="addItem1()">
+                        <div style="height:50px;">
+                            <div [ngClass]="{'alert-show': resumeForm.get('newItem1')?.invalid }"
+                                style="width: 98%; display: flex; justify-content: flex-end;" class="
+                                alert-hide">
+                                <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png"
+                                    alt="Diamond">
+                            </div>
+
+                            <input [ngClass]="{'error-placeholder': resumeForm.get('newItem1')?.invalid }"
+                                style="width:400px" formControlName="newItem1" placeholder="Online experiences" />
+                            <div>
+                                <div [ngClass]="{'alert-show': resumeForm.get('newItem1')?.invalid }"
+                                    class="alert  alert-hide">
+                                    <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png"
+                                        alt="Diamond">
+                                    <div style="margin-left: 5px; color: #fdcccc;">
+                                        Experience is too long (maximum is 40 characters)
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <button style="margin-top: 6%;" type="submit" class="add-button">+</button>
+                    </form>
+                </div>
+                <ul>
+                    <li *ngFor="let item of items1; let i = index">
+                        <div #item style="width:500px" class="item-container">
+                            <span style="width:500px">{{ item }}</span>
+                            <button (click)="removeItem1(i)">x</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="margin-left: 30%;" class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="input-container">
+                    <form style="width:400px" [formGroup]="resumeForm" (ngSubmit)="addItem2()">
+                        <div style="height:50px;">
+                            <div class="alert-hide" [ngClass]="{'alert-show': resumeForm.get('newItem2')?.invalid }"
+                                style="width: 98%; display: flex; justify-content: flex-end;">
+                                <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png"
+                                    alt="Diamond">
+                            </div>
+                            <input style="height: 45px;"
+                                [ngClass]="{'error-placeholder': resumeForm.get('newItem2')?.invalid }"
+                                style="width:400px" formControlName="newItem2" placeholder="Offline experiences" />
+                            <div class="alert alert-hide"
+                                [ngClass]="{'alert-show': resumeForm.get('newItem2')?.invalid }">
+                                <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png"
+                                    alt="Diamond">
+                                <div style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;">
+                                    Experience is too long
+                                    (maximum is 40
+                                    characters)
+                                </div>
+
+                            </div>
+                        </div>
+                        <button style="margin-top: 6%;" type="submit" class="add-button">+</button>
+                    </form>
+                </div>
+                <ul>
+                    <li *ngFor="let item of items2; let i = index">
+                        <div #item style="width:500px" class="item-container">
+                            <span style="width:500px">{{ item }}</span>
+                            <button (click)="removeItem2(i)">x</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+        <br>
+        <br>
+
+
+        <h3>SOCIAL</h3>
+
+
+
+        <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+            <div class="input-container">
+                <form style="width:500px" [formGroup]="resumeForm" (ngSubmit)="addItem3()">
+                    <div style="height:50px;">
+                        <div class="alert-hide" [ngClass]="{'alert-show': resumeForm.get('newItem3')?.invalid }"
+                            style="width: 98%; display: flex; justify-content: flex-end;">
+                            <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png"
+                                alt="Diamond">
+                        </div>
+                        <input style="height: 45px;"
+                            [ngClass]="{'error-placeholder': resumeForm.get('newItem3')?.invalid }" style="width:400px"
+                            formControlName="newItem3" placeholder="Social" />
+                        <div class="alert alert-hide" [ngClass]="{'alert-show': resumeForm.get('newItem3')?.invalid }">
+                            <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                            <div style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;">
+                                Social is too long
+                                (maximum is 40
+                                characters)
+                            </div>
+
+                        </div>
+                    </div>
+                    <button type="submit" class="add-button">+</button>
+                </form>
+            </div>
+            <ul>
+                <li *ngFor="let item of items3; let i = index">
+                    <div #item class="item-container">
+                        <span>{{ item }}</span>
+                        <button (click)="removeItem3(i)">x</button>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+    <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+        <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+            <br>
+            <br>
+            <h3>BASIC INFORMATIONS</h3>
+
+
+            <div style="width: 507px ; margin-left: 15px;">
+                <div style="height: 100px;width: 507px !important" class="form-group">
+                    <div class="alert-hide"
+                        [ngClass]="{'alert-show': (resumeForm.get('comments')?.invalid && (resumeForm.get('comments')?.touched || submitted))|| resumeForm.get('comments')?.hasError('maxlength') }"
+                        style="width: 100%; display: flex; justify-content: flex-end;">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Attention">
+                    </div>
+
+                    <input
+                        [ngClass]="{'error-placeholder': (resumeForm.get('comments')?.invalid && (resumeForm.get('comments')?.touched || submitted))||  resumeForm.get('comments')?.hasError('maxlength')}"
+                        style="width: 507px; height: 45px; position: relative; top: 2px;" formControlName="comments"
+                        placeholder="In-game name" />
+
+                    <div class="alert alert-hide"
+                        [ngClass]="{'alert-show': (resumeForm.get('comments')?.hasError('required') && (resumeForm.get('comments')?.touched || submitted))|| resumeForm.get('comments')?.hasError('maxlength')  }"
+                        style="width: 507px !important;">
+                        <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Attention">
+                        <div
+                            style="width: 507px !important;margin-left: 5px; color: #fdcccc; display: flex; align-items: center;">
+                            {{getErrorMessage()}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+
+            <div style="margin-left: 15px; display: flex; justify-content: flex-start;gap:3%; height: 70px ;">
+
+                <div style="height: 100px;" class="form-group">
+                    <div style="width: 100%; display: flex; justify-content: flex-end;" class=" alert-hide"
+                        [ngClass]="{'alert-show': (resumeForm.get('game')?.invalid && (resumeForm.get('game')?.touched || submitted))  }">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Diamond">
+                    </div>
+                    <p-dropdown [options]="gameOptions" formControlName="game" placeholder="Select a game"></p-dropdown>
+                </div>
+
+                <div style="height: 100px;" class="form-group">
+                    <div style="width: 100%; display: flex; justify-content: flex-end;" class=" alert-hide"
+                        [ngClass]="{'alert-show': (resumeForm.get('platform')?.invalid && (resumeForm.get('platform')?.touched || submitted))  }">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Diamond">
+                    </div>
+                    <p-dropdown [options]="platformOptions" formControlName="platform"
+                        placeholder="Select a platform"></p-dropdown>
+                </div>
+
+                <div style="height: 100px;" class="form-group">
+                    <div style="width: 100%;  display: flex; justify-content: flex-end;" class=" alert-hide"
+                        [ngClass]="{'alert-show': (resumeForm.get('priority')?.invalid && (resumeForm.get('priority')?.touched || submitted))  }">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Diamond">
+                    </div>
+
+                    <p-dropdown [options]="priorityOptions" formControlName="priority"
+                        placeholder="Select a priority"></p-dropdown>
+                </div>
+
+
+
+            </div>
+            <div style="width:507px !important; ;margin-left: 15px;" class="alert alert-hide"
+                [ngClass]="{'alert-show': (resumeForm.get('game')?.hasError('required') && (resumeForm.get('game')?.touched || submitted)) || (resumeForm.get('platform')?.hasError('required') &&(resumeForm.get('platform')?.touched || submitted)) || (resumeForm.get('priority')?.hasError('required') && (resumeForm.get('priority')?.touched || submitted))   }">
+                <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                <div
+                    style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;width: 510px !important;">
+                    {{getErrorMessageINFO()}}
+                </div>
+
+            </div>
+
+
+
+
+            <br>
+
+            <h3>PROFILES
+            </h3>
+            <div class="checkbox-column-container">
+                <div class="checkbox-column">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="player" formControlName="Player" />
+                        <label for="player">Player</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="webmaster" formControlName="Webmaster" />
+                        <label for="webmaster">Webmaster</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="communityManager" formControlName="CommunityManager" />
+                        <label for="communityManager">Community Manager</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="staff" formControlName="Staff" />
+                        <label for="staff">Staff</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="coach" formControlName="Coach" />
+                        <label for="coach">Coach</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="other" formControlName="Other" />
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+                <div class="checkbox-column">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="stratCaller" formControlName="StratCaller" />
+                        <label for="stratCaller">Strat caller</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="squad" formControlName="Squad" />
+                        <label for="squad">Squad</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="lanPlayer" formControlName="LAN Player" />
+                        <label for="lanPlayer">LAN Player</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="shoutcaster" formControlName="Shoutcaster" />
+                        <label for="shoutcaster">Shoutcaster</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="manager" formControlName="Manager" />
+                        <label for="manager">Manager</label>
+                    </div>
+                </div>
+                <div class="checkbox-column">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="movieMaker" formControlName="MovieMaker" />
+                        <label for="movieMaker">Movie maker</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="leader" formControlName="Leader" />
+                        <label for="leader">Leader</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sponsor" formControlName="Sponsor" />
+                        <label for="sponsor">Sponsor</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="webdesigner" formControlName="Webdesigner" />
+                        <label for="webdesigner">Webdesigner</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="editor" formControlName="Editor" />
+                        <label for="editor">Editor</label>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-hide"
+                [ngClass]="{'alert-show': (resumeForm.get('profileList')?.hasError('required') && (resumeForm.get('profileList')?.touched || submitted))  }"
+                style="margin-left: 3%; width: 570px;">
+                <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                <div style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;">
+                    Profile is required
+                </div>
+
+            </div>
+            <br>
+
+            <div class="description-container">
+                <h2 class="title">DESCRIPTION</h2>
+                <h3 class="subtitle">A LONG AND NICE DESCRIPTION WILL INCREASE YOUR CHANCES TO GET RECRUITED (OR TO
+                    RECRUIT).</h3>
+                <p class="note">Don't put any direct contact informations (emails, discord usernames or others...).</p>
+                <p class="description">Players or teams can contact you through Seek Team for free and in an unlimited
+                    way as long as your resume or offers are active. The recommended way is to deal your whole
+                    recruitment workflow on the website.</p>
+            </div>
+
+            <div class="textarea-container">
+                <div class="alert-hide"
+                    [ngClass]="{'alert-show': resumeForm.get('description')?.invalid && (resumeForm.get('description')?.touched || submitted) }"
+                    style="width: 81.5%; display: flex; justify-content: flex-end;">
+                    <img style="height: 27px; width: 27px;" src="assets/images/rabia/attention.png" alt="Diamond">
+                </div>
+                <textarea
+                    [ngClass]="{'error-placeholder': resumeForm.get('description')?.invalid && (resumeForm.get('description')?.touched || submitted)}"
+                    style="height: 250px;" formControlName="description" placeholder="Description..."></textarea>
+                <div class="alert alert-hide"
+                    [ngClass]="{'alert-show': (resumeForm.get('description')?.hasError('required') && (resumeForm.get('description')?.touched || submitted))  }"
+                    style="width:1000px !important">
+                    <img style="height: 19px; width: 19px;" src="assets/images/rabia/alerte.png" alt="Diamond">
+                    <div
+                        style=" margin-left: 5px;color: #fdcccc; display: flex; align-items: center;  width:1000px !important">
+                        Description is required
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="textarea-container2">
+                <textarea style="height: 150px;" formControlName="ambitions" placeholder="Ambitions..."></textarea>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-submit">ENVOYER</button>
+        </div>
+    </form>
+
+
+
+
+
+
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

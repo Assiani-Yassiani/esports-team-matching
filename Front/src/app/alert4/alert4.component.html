@@ -1,0 +1,12 @@
+<div class="modal-backdrop" *ngIf="show" (click)="onBackdropClick($event)">
+    <div class="modal-content">
+        <span class="close" (click)="triggerCloseAnimation()">&times;</span>
+        <h2>Recruit this player ?</h2>
+        <h3>REQUIREMENTS</h3>
+        <p>You must be a manager (or an owner) of at least one team that plays the same player's game.</p>
+
+
+        <button class="btn-create-cv" (click)="app()">RECRUIT THIS PLAYER</button>
+
+    </div>
+</div>

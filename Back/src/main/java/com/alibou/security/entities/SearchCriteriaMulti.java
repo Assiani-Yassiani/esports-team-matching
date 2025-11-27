@@ -1,0 +1,13 @@
+package com.alibou.security.entities;
+
+import lombok.Data;
+
+import java.util.List;
+@Data
+public class SearchCriteriaMulti {
+    private List<String> selectedCountries;
+    private List<String> selectedGames;
+    private List<String> selectedPlatforms;
+
+    private String teamName;
+}

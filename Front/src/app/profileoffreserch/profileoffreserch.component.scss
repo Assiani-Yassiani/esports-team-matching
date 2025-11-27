@@ -1,0 +1,312 @@
+p {
+
+
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.profile-container {
+    width: 260px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(14 11 32);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #797b7d;
+}
+
+.profile-block {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-block h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.profile-block p {
+    margin: 5px 0;
+    color: #6c757d;
+}
+
+.not-premium {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.views,
+.contacts,
+.availability {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #6c757d;
+    border-bottom: 1px solid #6c757d;
+}
+
+.level-container,
+.reviews-container {
+    text-align: left;
+    padding: 10px 0;
+}
+
+.progress {
+    height: 10px;
+    background-color: #6c757d;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 20%;
+    height: 100%;
+    background-color: #cdab45;
+}
+
+.reviews-container {
+    padding: 10px 0;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews-header h3 {
+    margin: 0;
+}
+
+.reviews-header p {
+    margin: 0;
+    color: #17a2b8;
+    /* Couleur de l'élément à droite de REVIEWS */
+}
+
+.reviews-separator {
+    height: 10px;
+    background-color: #6c757d;
+    border: none;
+    margin: 10px 0;
+
+    border-radius: 5px;
+}
+
+.reviews {
+    color: #6c757d;
+    /* Couleur du texte des reviews */
+}
+
+.reviews-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6c757d;
+    padding: 10px;
+    border-radius: 5px;
+    color: #6c757d;
+    margin-top: 10px;
+    height: 100px;
+}
+
+.reviews-note img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.reviews {
+    margin-top: 10px;
+    color: #6c757d;
+}
+
+.reviews-note {
+    display: flex;
+    align-items: center;
+    background-color: #c9cbcd;
+    padding: 10px;
+    border-radius: 5px;
+    color: #8b8e91;
+}
+
+.reviews-note img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+    color: #6c757d;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.profile-info-container {
+    margin-left: 20px;
+    width: 100%;
+    max-width: 1080px;
+
+    background-color: rgb(14 11 32);
+    padding: 20px;
+
+}
+
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-section h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #797b7d;
+}
+
+.profile-section p {
+    margin: 5px 0;
+    color: #6c757d;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-column {
+    width: 48%;
+}
+
+.danger-zone {
+
+    height: 207px;
+    background-color: rgb(26, 23, 43);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.danger-zone-text {
+
+
+    color: rgb(175 53 82)
+}
+
+.danger-zone-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: rgb(175 53 82);
+    font-size: 46px;
+}
+
+.danger-zone-text p {
+    margin: 5px 0 0;
+    color: #6c757d;
+}
+
+.danger-zone-button {
+    background-color: transparent;
+    border: 1px solid rgb(175 53 82);
+    color: rgb(175 53 82);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: bold;
+    font-size: 16px;
+    max-width: 100%;
+}
+
+.danger-zone-button:hover {
+    background-color: rgb(175 53 82);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #17a2b8;
+    /* Bordure bleue claire */
+    color: #17a2b8;
+    /* Texte bleu clair */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #17a2b8;
+    /* Fond bleu clair au survol */
+    color: #ffffff;
+    /* Texte blanc au survol */
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.offer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.offer div {
+    flex: 1;
+}
+
+.offer .details {
+    display: flex;
+    align-items: center;
+}
+
+.offer .details img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.offer .time,
+.offer .age {
+    text-align: right;
+}
+

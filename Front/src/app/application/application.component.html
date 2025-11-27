@@ -1,0 +1,64 @@
+<app-resumeapp [status]="stat" [items1]="items1" [items2]="items2" [items3]="items3" [resume]="resume"
+    [show]="isModalVisibleapp" (close)="hideModalapp()"></app-resumeapp>
+<div class="modal-backdrop" *ngIf="show" (click)="onBackdropClick($event)">
+    <div class="modal-content" (click)="onContentClick($event)">
+        <span class="close" (click)="triggerCloseAnimation()">&times;</span>
+
+        <div *ngIf="!app.length" class="card">
+            <br>
+            <img style="width: 100px; height: 100px;" src="assets/images/rabia/mot-de-passe.png" alt="">
+            <br>
+
+            <p style=" color: #c8c5c5;">NO APPLICATIONS YET</p>
+        </div>
+        <div *ngIf="app.length">
+            <table>
+                <thead>
+                    <tr>
+                        <th>NEW</th>
+                        <th>RESUME</th>
+                        <th>CRETED</th>
+                        <th>ACTION</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ap of app; let i = index"
+                        [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+                        <td>
+                            <img *ngIf="!ap.view" style="margin-right: 5%; height: 35px; width: 35px;"
+                                src="assets/images/rabia/star (2).png" alt="Check">
+
+                        </td>
+                        <td><img (click)="view(ap.id)" class="b11" style="margin-right: 5%; height: 35px; width: 35px;"
+                                src="assets/images/rabia/oeil.png" alt="Check"> </td>
+                        <td>{{ getTimeAgo(ap.creationDate) }}</td>
+                        <td><label class="switch">
+                                <input [disabled]="ap.status" (click)="status(ap.id)" type="checkbox"
+                                    [(ngModel)]="ap.status">
+                                <span class="slider round">
+                                    <span class="switch-label"
+                                        [ngClass]="{'switch-on': ap.status, 'switch-off': !ap.status}">
+                                        {{ ap.status ? '' : 'off' }}
+                                    </span>
+                                </span>
+                            </label></td>
+                        <td class="actions">
+
+
+                            <img *ngIf="!ap.status" class="b11" style="margin-right: 5%; height: 35px; width: 35px;"
+                                src="assets/images/rabia/horloge-murale (3).png" alt="Check">
+                            <img (click)="discord()" *ngIf="ap.status" class="b11"
+                                style="margin-right: 5%; height: 35px; width: 35px;"
+                                src="assets/images/rabia/grouper.png" alt="Check">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<app-discord [link_basic]="link" [show]="isModalVisibledisc" (close)="
+hideModaldisc()"></app-discord>

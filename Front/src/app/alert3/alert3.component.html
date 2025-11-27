@@ -1,0 +1,17 @@
+<div class="modal-backdrop" *ngIf="show" (click)="onBackdropClick($event)">
+    <div class="modal-content">
+        <span class="close" (click)="triggerCloseAnimation()">&times;</span>
+        <h2>Recruit this player ?</h2>
+        <h3>REQUIREMENTS</h3>
+        <p>You must be a manager (or an owner) of at least one team that plays the same player's game.</p>
+        <div style="display: flex;justify-content: center;align-items: center;">
+            <div class="alert">
+                <img style="width:50px;height: 50px;" src="assets/images/rabia/panneau-davertissement.png"
+                    alt="Alert Icon">
+                <!-- Replace with your alert icon -->
+                <span>You are currently not a manager of a team that is paying the same player's game.</span>
+            </div>
+            <button class="btn-create-cv" (click)="createCv()">CREATE A TEAM</button>
+        </div>
+    </div>
+</div>

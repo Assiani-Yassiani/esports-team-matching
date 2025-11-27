@@ -1,0 +1,159 @@
+<section style="height: 400px;" class="job-searcing af">
+    <div style="height: 400px;" class="container">
+        <div style="height: 400px;" class="row">
+            <div style="height: 400px;" class="col-md-12 col-sm-12">
+                <div style="height: 400px;" class="search-con">
+                    <div class="row">
+                        <div style="margin-top: 20px;" class="col-md-12 col-sm-12">
+                            <div class="heading_con">
+                                <h2 style="font-size: 50px;">MANAGE YOUR RESUME</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br>
+<div style="width:100% !important" class="categories-area">
+    <div style="width:100%" class="container">
+        <div style="width:100% !important" class="col-lg-10 col-md-12 col-sm-12 offset-lg-1">
+            <div class="row">
+                <div class="categories" style="border-radius: 8px; width:240px;height:260px;">
+                    <a style="border-radius: 8px; width:260px;height:260px;">
+                        <img style="border-radius: 8px; width: 100%;height: 100%;" src="assets/images/rabia/profil.png"
+                            alt="">
+                    </a>
+                </div>
+                <br><br>
+                <div style="width:40px"></div>
+                <div
+                    style=" padding-top: 70px; flex-direction: column;display: flex; justify-content: center; align-items: left;">
+                    <h5 style="font-weight: 600;font-size: 1.5rem; line-height: 1.5rem; color: rgb(163, 163, 163);">
+                        Player
+                    </h5>
+                    <h5 style="font-weight: 700;font-size: 4.6rem; line-height: 0rem;">
+                        {{ resume.comments}}
+                    </h5>
+                    <div style="height: 27px;"></div>
+
+                    <h5 style="font-weight: 600;font-size: 2rem; line-height: 2.5rem; color: rgb(163, 163, 163);">
+                        {{ resume.game}} | {{resume.platform}}
+                    </h5>
+                </div>
+                <div style="width:400px"></div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <button [routerLink]="['/up_resume']" class="btn-outline">Update resume</button>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="profile-container">
+
+                    <div class="profile-block" style="display: flex; justify-content: center;align-items: center;">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/star.png" alt="Diamond">
+                        <div style="width:10px"></div>
+                        <p class="not-premium">NOT PREMIUM</p>
+                    </div>
+                    <div class="profile-block views">
+                        <p><strong>0</strong><br> views</p>
+                    </div>
+                    <div class="profile-block contacts">
+                        <p><strong>0</strong><br> no contact from teams yet</p>
+                    </div>
+                    <div class="profile-block availability">
+                        <img style="height: 27px; width: 27px;" src="assets/images/rabia/check.png" alt="Diamond">
+                        <div style="width:10px"></div>
+                        <p>available since <strong style="color: #71d8e8">TODAY</strong></p>
+                    </div>
+                    <div class="level-container">
+                        <h3>LEVEL</h3>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="reviews-container">
+                        <div class="reviews-header">
+                            <h3>REVIEWS</h3>
+                            <p>-</p>
+                        </div>
+                        <hr class="reviews-separator">
+                        <div class="reviews">
+                            <p>No reviews</p>
+                            <div class="reviews-note">
+                                <img style="width: 50px;" src="assets/images/rabia/medal.png" alt="Diamond">
+                                <p style="margin-top: 30px;">this player is not ready to participate financially for his
+                                    team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:900px ;height: 750px;" class="profile-info-container">
+                    <div class="scroll">
+                        <div class="profile-section">
+                            <h3>AMBITION</h3>
+                            <p>{{ resume.ambitions || 'No ambition yet' }}</p>
+                        </div>
+                        <div class="profile-section profile-row">
+                            <div class="profile-column">
+                                <h3>ONLINE EXPERIENCE</h3>
+                                <p *ngFor="let item of items1">{{ item }}</p>
+                                <p *ngIf="items1.length === 0">No experiences yet</p>
+                            </div>
+                            <div class="profile-column">
+                                <h3>OFFLINE EXPERIENCE</h3>
+                                <p *ngFor="let item of items2">{{ item }}</p>
+                                <p *ngIf="items2.length === 0">No experiences yet</p>
+                            </div>
+                        </div>
+                        <div class="profile-section">
+                            <h3>DESCRIPTION</h3>
+                            <p>{{ resume.description || 'No description yet' }}</p>
+                        </div>
+                        <div class="profile-section">
+                            <h3>LINKS</h3>
+                            <p *ngFor="let item of items3">{{ item }}</p>
+                            <p *ngIf="items3.length === 0">No links yet</p>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="profile-section">
+
+                        <div style=" border-radius:13px" class="g-maps" style="color: black;">
+                            <div class="container-fluid">
+                                <div style="border-radius:13px" class="row">
+                                    <div style="border-radius:13px " class="col pd-0">
+                                        <div style="border-radius:13px" class="maps">
+                                            <div id="map" class="map-full" style="border-radius:13px ;color: black;">
+                                                <iframe style="border-radius:7px ; height: 190px; width: 98%;"
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13004080.414077152!2d-104.65693512785852!3d37.27559283318413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1530855407925"
+                                                    allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <section>
+        <div class="danger-zone">
+            <div class="danger-zone-text">
+                <h2 style="margin-left: 120px;">DANGER ZONE</h2>
+                <p style="margin-left: 120px">Beware! Actions in this zone are irreversible. If you make a mistake, even
+                    our
+                    support won't be able to help you.</p>
+            </div>
+            <button (click)="delete(resume.id)" style="margin-right:120px" class="danger-zone-button">DELETE MY
+                RESUME</button>
+        </div>
+    </section>
