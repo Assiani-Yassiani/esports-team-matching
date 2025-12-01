@@ -24,7 +24,3 @@ L’objectif est d’offrir un espace simple, moderne et efficace pour connecter
 - **Base de données** : MySQL  
 
 ---
-
-## 🚀 Objectif
-
-Créer une plateforme intuitive permettent de centraliser le recrutement e-sport, d’améliorer la visibilité des joueurs et de simplifier pour les équipes la recherche de profils adaptés à leurs besoins.
